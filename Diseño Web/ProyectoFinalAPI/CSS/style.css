@@ -1,0 +1,28 @@
+hr{
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: 0.25;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.logo{
+  width: 70%;
+  height: 60%;
+}
+
+.hr-help{
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

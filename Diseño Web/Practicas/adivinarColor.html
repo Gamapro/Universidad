@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title> Juego colores </title>
+        <link rel="stylesheet" href="../CSS/util.css"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../JS/adivinarColor.js" ></script> 
+    </head>
+    <body>
+
+
+        <h2 class="center"> Adivina el color! </h2>
+
+        <h2 id="guess" class="center">  </h2>
+        <br>
+
+        <div class="center">
+        <canvas
+            width="950" height="200"
+            style="border:2px  solid  #00c4a0" id="Colores"
+        > </canvas> 
+
+        <br><br>
+
+        <div class="botones">
+            <input type = "button" onclick = "addLineToDoc(1)" value = "1">  
+            <input type = "button" onclick = "addLineToDoc(2)" value = "2">  
+            <input type = "button" onclick = "addLineToDoc(3)" value = "3">  
+            <input type = "button" onclick = "addLineToDoc(4)" value = "4">  
+            <input type = "button" onclick = "addLineToDoc(5)" value = "5">  
+            <input type = "button" onclick = "addLineToDoc(6)" value = "6">  
+        </div>
+
+        <br>
+        <input type = "button" 
+        onclick = "drawCircles()" value = "Reset">  
+        <br><div id="new">
+            <p id="par"></p>
+        </div>
+        
+        </div>
+
+        <script type="text/javascript"> drawCircles(); </script> 
+
+        
+    </body>
+</html>

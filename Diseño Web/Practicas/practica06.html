@@ -1,0 +1,42 @@
+<html>
+    <head> 
+        <title> Practica 6 </title>
+    </head>
+    <body>
+        <h1> Canvas </h1> <hr> 
+        <canvas
+            width="600" height="600"
+            style="border:2px  solid  #00c4a0" id="linea"
+        > </canvas>
+        <script>
+            var canvas = document.getElementById("linea");
+            var contexto = canvas.getContext("2d");
+            
+            //contexto.moveTo(0,0);
+            //contexto.lineTo(300,300);
+            //contexto.stroke();
+
+            var x = 300, y = 300;
+            var radio = 100;
+            var d = 40;
+            // cara
+            contexto.beginPath();
+            contexto.arc(x,y,radio,0,2*Math.PI);            
+            contexto.stroke();
+            // sonrisa 
+            contexto.beginPath();
+            contexto.arc(x,y,radio/2,0,Math.PI);            
+            contexto.stroke();
+            // ojo 1
+            contexto.beginPath();
+            contexto.arc(x-d,y-d,radio/10,0,2*Math.PI);            
+            contexto.stroke();
+            // ojo 2
+            contexto.beginPath();
+            contexto.arc(x+d,y-d,radio/10,0,2*Math.PI);            
+            contexto.stroke();
+
+        </script>
+    </body>
+
+</html>

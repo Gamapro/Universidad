@@ -1,0 +1,50 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega16A"</DEVICE>
+ <WORKING_DIR>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\avrasm\inc\m16Adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\Debug\03 Practica Arcos Bravo.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>03 Practica Arcos Bravo.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>03 Practica Arcos Bravo.map</FILE>
+  <FILE>03 Practica Arcos Bravo.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <main><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>46</LINE></main>
+  <checkDisplay><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>102</LINE></checkDisplay>
+  <setDisplay><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>57</LINE></setDisplay>
+  <aumenta><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>114</LINE></aumenta>
+  <decrementa><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>121</LINE></decrementa>
+  <diez><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>128</LINE></diez>
+  <eq0><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>81</LINE></eq0>
+  <eq1><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>83</LINE></eq1>
+  <eq2><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>85</LINE></eq2>
+  <eq3><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>87</LINE></eq3>
+  <eq4><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>89</LINE></eq4>
+  <eq5><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>91</LINE></eq5>
+  <eq6><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>93</LINE></eq6>
+  <eq7><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>95</LINE></eq7>
+  <eq8><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>97</LINE></eq8>
+  <eq9><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>99</LINE></eq9>
+  <set0><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>108</LINE></set0>
+  <set9><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>110</LINE></set9>
+  <delayRebote><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>133</LINE></delayRebote>
+  <cosa><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>117</LINE></cosa>
+  <cosa2><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>124</LINE></cosa2>
+  <WGLOOP0><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>136</LINE></WGLOOP0>
+  <WGLOOP1><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>137</LINE></WGLOOP1>
+  <WGLOOP2><FILE>C:\Users\David Gamaliel Arcos\Documents\Micros\03 Practica - Contador\03 Practica Arcos Bravo\03 Practica Arcos Bravo\main.asm</FILE><LINE>144</LINE></WGLOOP2>
+ </LABELS>
+</ASSEMBLER_INFO>

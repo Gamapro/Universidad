@@ -1,0 +1,265 @@
+;
+; 07 Practica Arcos Bravo.asm
+;
+; Created: 16/10/2021 12:01:37 p. m.
+; Author : David Gamaliel Arcos
+;
+
+;*******************
+.include "m16def.inc"     
+;*******************
+;Registros (aqui pueden definirse)
+.def rt=r24
+;Palabras claves (aqu? pueden definirse)
+;.equ LCD_DAT=DDRC
+.equ MAT_DAT=DDRA
+.equ MAT_PORT=PORTA
+.equ MAT_PIN=PINA
+
+.equ OUT_DAT=DDRB
+.equ OUT_PORT=PORTB
+;********************
+
+
+; MATRIZ
+
+ldi R16, 0x0F
+out MAT_DAT, R16
+ldi R16, 0xFF
+out MAT_PORT, R16
+
+ldi r16, 0xFF
+out OUT_DAT, r16
+clr r16
+out OUT_PORT, r16
+
+main:
+
+	out OUT_PORT, rt
+
+	ldi R16, 0b1111_1110
+	out MAT_PORT, R16
+	nop 
+	nop
+
+	sbis MAT_PIN, 4
+	rcall AST
+	sbis MAT_PIN, 5
+	rcall C7
+	sbis MAT_PIN, 6
+	rcall C4
+	sbis MAT_PIN, 7
+	rcall C1
+
+	ldi R16, 0b1111_1101
+	out MAT_PORT, R16
+	nop 
+	nop
+
+	sbis MAT_PIN, 4
+	rcall C0
+	sbis MAT_PIN, 5
+	rcall C8
+	sbis MAT_PIN, 6
+	rcall C5
+	sbis MAT_PIN, 7
+	rcall C2
+
+	ldi R16, 0b1111_1011
+	out MAT_PORT, R16
+	nop 
+	nop
+
+	sbis MAT_PIN, 4
+	rcall GATO
+	sbis MAT_PIN, 5
+	rcall C9
+	sbis MAT_PIN, 6	
+	rcall C6
+	sbis MAT_PIN, 7
+	rcall C3
+
+	ldi R16, 0b1111_0111
+	out MAT_PORT, R16
+	nop 
+	nop
+
+	sbis MAT_PIN, 4
+	rcall CD
+	sbis MAT_PIN, 5
+	rcall CC
+	sbis MAT_PIN, 6
+	rcall CB
+	sbis MAT_PIN, 7
+	rcall CA
+
+rjmp main
+
+C0:
+	rcall delayRebote
+	ldi rt, 0b0000_0000
+	out OUT_PORT, rt
+    btn4:
+		sbis MAT_PIN, 4
+		rjmp btn4
+	rcall delayRebote
+ret
+
+C1:
+    rcall delayRebote
+	ldi rt, 0b0000_0001
+	out OUT_PORT, rt
+    btn3:
+		sbis MAT_PIN, 7
+		rjmp btn3
+    rcall delayRebote
+ret
+
+C2:
+	rcall delayRebote
+	ldi rt, 0b0000_0010
+	out OUT_PORT, rt
+    btn7:
+		sbis MAT_PIN, 7
+		rjmp btn7
+    rcall delayRebote
+ret
+
+C3:
+	rcall delayRebote
+	ldi rt, 0b0000_0011
+	out OUT_PORT, rt
+    btn11:
+		sbis MAT_PIN, 7
+		rjmp btn11
+    rcall delayRebote
+ret
+
+C4:
+	rcall delayRebote
+
+    btn2:
+		sbis MAT_PIN, 6
+		rjmp btn2
+    rcall delayRebote
+	ret
+
+C5:
+    rcall delayRebote
+	
+    btn6:
+		sbis MAT_PIN, 6
+		rjmp btn6
+    rcall delayRebote
+	ret
+
+C6:
+	rcall delayRebote
+
+    btn10:
+		sbis MAT_PIN, 6
+		rjmp btn10
+    rcall delayRebote
+	ret
+
+C7:
+	rcall delayRebote
+
+    btn1:
+		sbis MAT_PIN, 5
+		rjmp btn1
+    rcall delayRebote
+	ret
+
+C8:
+	rcall delayRebote
+
+    btn5:
+		sbis MAT_PIN, 5
+		rjmp btn5
+    rcall delayRebote
+	ret
+
+C9:
+	rcall delayRebote
+
+    btn9:
+		sbis MAT_PIN, 5
+		rjmp btn9
+    rcall delayRebote
+	ret
+
+AST:
+	rcall delayRebote
+
+    btn0:
+		sbis MAT_PIN, 4
+		rjmp btn0
+    rcall delayRebote
+	ret
+
+GATO:
+	rcall delayRebote
+
+    btn8:
+		sbis MAT_PIN, 4
+		rjmp btn8
+    rcall delayRebote
+	ret
+
+CA:
+	rcall delayRebote
+
+    btn15:
+		sbis MAT_PIN, 7
+		rjmp btn15
+    rcall delayRebote
+	ret
+
+CB:
+	rcall delayRebote
+
+    btn14:
+		sbis MAT_PIN, 6
+		rjmp btn14
+    rcall delayRebote
+	ret
+
+CC:
+	rcall delayRebote
+
+    btn13:
+		sbis MAT_PIN, 5
+		rjmp btn13
+    rcall delayRebote
+	ret
+
+CD:
+	rcall delayRebote
+
+    btn12:
+		sbis MAT_PIN, 4
+		rjmp btn12
+    rcall delayRebote
+	ret
+
+
+delayRebote:
+; delaying 49995 cycles:
+          ldi  R20, $65
+WGLOOP0:  ldi  R21, $A4
+WGLOOP1:  dec  R21
+          brne WGLOOP1
+          dec  R20
+          brne WGLOOP0
+; ----------------------------- 
+; delaying 3 cycles:
+          ldi  R20, $01
+WGLOOP2:  dec  R20
+          brne WGLOOP2
+; ----------------------------- 
+; delaying 2 cycles:
+          nop
+          nop
+; ============================= 
+ret

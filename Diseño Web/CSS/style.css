@@ -1,0 +1,244 @@
+.Background{
+    background-size:100%;
+    background-color:rgb(179, 255, 255);
+}
+
+hr{
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: 0.25;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.logo{
+  width: 70%;
+  height: 60%;
+}
+
+.hr-help{
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.Titulo{
+    grid-template-columns: 70%, 30%;
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.Formulario{
+    background-color:rgb(234, 255, 255);
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.Cuadro-color{
+    background-color:rgb(234, 255, 255);
+}
+
+.Texto-normal{
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.PDF{
+    height: 800px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.Tabla-principal{
+    place-items: center;
+    width: 100%;
+    height: 60px;
+    background: rgb(134, 182, 236);
+}
+
+.Tabla-secundaria{
+    text-align: center;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    height: 100%;
+    background: rgb(195, 171, 255);
+    border: black;
+    border-width: 30px;
+    border-color: black;
+    border-radius: 5px;
+}
+
+#Tabla-habilidades{
+    background-color:rgb(234, 255, 255);
+    background:rgb(234, 255, 255);
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin: auto;
+    place-items: center;
+    width: 40%;
+    height: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#Tabla-habilidades tr:hover {background-color: rgb(174, 233, 255);}
+
+#Tabla-habilidades tr:nth-child(odd){background-color: #bffeff;}
+
+#Tabla-habilidades th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #68c2dc;
+}
+
+#Tabla-habilidades td{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.Footer{
+    display: grid;
+    grid-template-rows: 20px 80px;
+}
+.Lista{
+    font-family: "Lucida Console", "Courier New", monospace;
+    display: grid;
+    place-items: center;
+}
+
+.centerText{
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+}
+
+.blockDiv{
+    background-color: #00feff;
+    padding: 80px;
+    margin-bottom: 20px;
+}
+
+.inlineDiv{
+    background-color: #730324;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 100px;
+    display: inline;
+}
+
+.imgBox{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.imgBoxDentro{
+    width: 100%;
+    border: 5px solid #b1fc48;
+    outline: 5px solid #78f;
+    outline-offset: -20px;
+}
+
+.textBox{
+    position: absolute;
+    color: #78f;
+    font-size: 3em;
+}
+
+.box1{
+    width: 250px;
+    height: 250px;
+    background-color: purple;
+    text-align: center;
+    font-size: 3em;
+}
+
+.box2{
+    width: 250px;
+    height: 250px;
+    background-color: cyan;
+    text-align: center;
+    font-size: 3em;
+}
+
+.box1{
+    position: relative;
+    top: 15px;
+    left: 40px;
+    right: 30px;
+    bottom: 50px;
+    z-index: -1;
+}
+
+.big-box{
+    margin: auto;
+    border: 3px solid;
+    height: 400px;
+    width: 400px;
+    color: purple;
+    position: relative;
+}
+
+.box-left-top{
+    width: 50px;
+    height: 50px;
+    border: 2px solid slateblue;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.box-right-top{
+    width: 50px;
+    height: 50px;
+    border: 2px solid blueviolet;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.box-left-bottom{
+    width: 50px;
+    height: 50px;
+    border: 2px solid powderblue;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    transform: translate(0%, -100%);
+}
+
+.box-right-bottom{
+    width: 50px;
+    height: 50px;
+    border: 2px solid springgreen;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transform: translate(0%, -100%);
+}
+
+.box-center{
+    width: 50px;
+    height: 50px;
+    border: 2px solid turquoise;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

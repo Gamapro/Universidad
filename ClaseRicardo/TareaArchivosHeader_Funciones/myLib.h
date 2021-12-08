@@ -1,0 +1,3 @@
+int cube();
+
+int square();

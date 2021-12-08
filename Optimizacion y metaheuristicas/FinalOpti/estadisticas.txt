@@ -1,0 +1,30 @@
+Numero de datos: 30
+Desviacion estandar: 27.70497348050627
+Promedio: 702.3666666666667
+Punto maximo f(x) = 770.0
+Punto minimo f(x) = 671.0
+Indice de mejor resultado = 26
+Numero de datos: 30
+Desviacion estandar: 38.224497671286954
+Promedio: 1037.2333333333333
+Punto maximo f(x) = 1148.0
+Punto minimo f(x) = 987.0
+Indice de mejor resultado = 15
+Numero de datos: 30
+Desviacion estandar: 38.31964973163971
+Promedio: 809.2666666666667
+Punto maximo f(x) = 912.0
+Punto minimo f(x) = 754.0
+Indice de mejor resultado = 18
+Numero de datos: 30
+Desviacion estandar: 18.53707995703027
+Promedio: 861.1
+Punto maximo f(x) = 908.0
+Punto minimo f(x) = 830.0
+Indice de mejor resultado = 0
+Numero de datos: 30
+Desviacion estandar: 29.11631844859511
+Promedio: 800.8
+Punto maximo f(x) = 877.0
+Punto minimo f(x) = 756.0
+Indice de mejor resultado = 26

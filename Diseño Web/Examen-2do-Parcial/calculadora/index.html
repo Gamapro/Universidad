@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Calc App</title>
+  </head>
+  <body>
+    <div class="container">
+       
+        <div class="calculator">
+          <div class="calculator__display">
+            <p id="disp">0</p>
+          </div>
+    
+          <div class="calculator__keys">
+            <button onclick="add('+')" class="key--operator" data-action="add">+</button>
+            <button onclick="add('-')" class="key--operator" data-action="subtract">-</button>
+            <button onclick="add('*')" class="key--operator" data-action="multiply">&times;</button>
+            <button onclick="add('/')" class="key--operator" data-action="divide">÷</button>
+            <button onclick="add(7)">7</button>
+            <button onclick="add(8)">8</button>
+            <button onclick="add(9)">9</button>
+            <button onclick="add(4)">4</button>
+            <button onclick="add(5)">5</button>
+            <button onclick="add(6)">6</button>
+            <button onclick="add(1)">1</button>
+            <button onclick="add(2)">2</button>
+            <button onclick="add(3)">3</button>
+            <button onclick="add(0)">0</button>
+            <button onclick="add('.')" data-action="decimal">.</button>
+            <button onclick="reset()" data-action="clear">AC</button>
+            <button onclick="ev()" class="key--equal" data-action="calculate">=</button>
+          </div>
+        </div>
+      </div>
+
+      <script src="script.js"></script>
+
+  </body>
+</html>

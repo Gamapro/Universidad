@@ -1,0 +1,20 @@
+body {
+  background-color: #ACFFE0;
+}
+
+.center{
+    text-align: center;
+}
+
+.botones{
+    text-align: center;
+    justify-content: center;
+    color: solid  #04826b;
+}
+
+input{
+  border: 2px solid #29004f;
+  border-radius: 8px;
+  text-align: center;
+  background-color: transparent; 
+}
