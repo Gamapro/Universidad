@@ -1,3 +1,15 @@
 **/node_modules/
 **/.ipynb_checkpoints/
 **/archive/images/
+
+**/Micros - Assembly/*/*/*/Debug/
+**/Micros - Assembly/*.workspace
+**/Micros - Assembly/*.zip
+**/Micros - Assembly/*.pdsbak
+**/Micros - Assembly/*.pdsprj
+
+**/Micros - C & C++/*/*/Debug/
+**/Micros - C & C++/*.workspace
+**/Micros - C & C++/*.zip
+
+**/Machine Learning/datasets/
