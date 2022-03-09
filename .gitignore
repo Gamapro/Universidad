@@ -1,15 +1,25 @@
 **/node_modules/
 **/.ipynb_checkpoints/
 **/archive/images/
+**/__pycache__/ 
 
-**/Micros - Assembly/*/*/*/Debug/
-**/Micros - Assembly/*/*/.vs/
-**/Micros - Assembly/*.workspace
-**/Micros - Assembly/*.zip
+**/.vs/
 **/Micros - Assembly/*.pdsbak
+**/*.workspace
+**/*.PWI
+**/*.DBK
+**/*.atsln
+**/*.asm~
+**/*.asmproj 
+
+**/Micros - Assembly/*/*/Debug/
+**/Micros - Assembly/*/*/*/Debug/
+**/Micros - Assembly/*/*/*.xml
 
 **/Micros - C & C++/*/*/Debug/
-**/Micros - C & C++/*.workspace
+**/Micros - C & C++/*/*/*/Debug/
+**/Micros - C & C++/*/*/*.xml
 **/Micros - C & C++/*.zip
+**/Micros - Assembly/*.zip
 
 **/Machine Learning/datasets/

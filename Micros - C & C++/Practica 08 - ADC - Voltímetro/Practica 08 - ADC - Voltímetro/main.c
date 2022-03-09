@@ -5,13 +5,7 @@
  *  Author: David Gamaliel Arcos
  */ 
 
-#define F_CPU 1000000
-
-#define setBit(x,i) x|=(1<<i)
-#define clearBit(x,i) x&=(~(1<<i))
-#define offBit(x,i) !(x & (1<<i))
-#define onBit(x,i)  (x & (1<<i))
-#define moveFour(x) x=(x<<4)
+#define F_CPU 4000000
 
 #include <xc.h>
 #include <avr/io.h>
@@ -23,7 +17,6 @@
 // #include <cstdlib>
 #include <time.h>
 
-
 #define DDRLCD DDRC
 #define PORTLCD PORTC
 #define PINLCD PINC
@@ -31,9 +24,8 @@
 #define RW 5
 #define E 6
 #define BF 3
-
-#define LCD_Cmd_Clear      0b00000001	// replace all characters with ASCII 'space'
-#define LCD_Cmd_Home       0b00000010  // return cursor to first position on first line
+#define LCD_Cmd_Clear      0b00000001
+#define LCD_Cmd_Home       0b00000010
 //#define LCD_Cmd_Mode     0b000001 ID  S
 #define LCD_Cmd_ModeDnS	   0b00000110 //sin shift cursor a la derecha
 #define LCD_Cmd_ModeInS	   0b00000100 //sin shift cursor a la izquierda
@@ -51,6 +43,13 @@
 #define LCD_Cmd_Func1LinG  0b00100100
 //#define LCD_Cmd_DDRAM    0b1xxxxxxx
 
+
+#define setBit(x,i) x|=(1<<i)
+#define clearBit(x,i) x&=(~(1<<i))
+#define offBit(x,i) !(x & (1<<i))
+#define onBit(x,i)  ((int)(x) & (int)(1<<i))
+#define moveFour(x) x=(x<<4)
+
 void saca_uno(volatile uint8_t *LUGAR, uint8_t BIT);
 void saca_cero(volatile uint8_t *LUGAR, uint8_t BIT);
 void LCD_wr_inst_ini(uint8_t instruccion);
@@ -61,12 +60,13 @@ void LCD_init(void);
 void LCD_wr_string(volatile const char *s);
 void LCD_wr_lines(volatile const char *a, volatile const char *b);
 
+char s[16];
+
 int main(void){
 	
 	ADMUX = 0b01000111;
 	ADCSRA = 0b10010101; // 4MHZ
 	//             - 
-	// sei();
 	
 	DDRA = 0x00;	// Entrada
 	PORTA = 0x00;	// No Pull ups
@@ -76,6 +76,21 @@ int main(void){
 	ADCSRA |= (1<<ADSC);
 	
 	while(1){
+		
+		ADCSRA |= (1<<ADSC);
+		while( onBit(ADCSRA, ADSC) ){}
+		// uint16_t res = ADC;
+		int res = ADC;
+		_delay_ms(500);
+		
+		res/=2;
+		res = (res)*(500.0/511.0); 
+		
+		LCD_wr_instruction(LCD_Cmd_Clear);
+		LCD_wr_instruction(0b10000000); //posición cero!
+		sprintf(s,"%d.%d%d", res/100, (res/10)%10, res%10);
+		// sprintf(s,"%d", res);
+		LCD_wr_string(s);
 		
 	}
 	
@@ -174,7 +189,7 @@ void LCD_wait_flag(void){
 		saca_uno(&PORTLCD,E); //pregunto por el primer nibble
 		_delay_ms(10);
 		saca_cero(&PORTLCD,E);
-		if(isSet(PINLCD,BF)) {break;} //uno_en_bit para protues, 0 para la vida real
+		if(onBit(PINLCD,BF)) {break;} //uno_en_bit para protues, 0 para la vida real
 		_delay_us(10);
 		saca_uno(&PORTLCD,E); //pregunto por el segundo nibble
 		_delay_ms(10);
