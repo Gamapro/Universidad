@@ -2,7 +2,7 @@
 
 use store;
 
-drop table  if exists order_items;
+drop table if exists order_items;
 drop table if exists orders;
 drop table if exists order_item_notes;
 

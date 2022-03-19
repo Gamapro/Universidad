@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Tarea Venta de Computadoras/1.0.0": {
+        "runtime": {
+          "Tarea Venta de Computadoras.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Tarea Venta de Computadoras/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

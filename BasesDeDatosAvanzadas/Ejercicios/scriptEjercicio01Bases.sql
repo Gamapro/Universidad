@@ -2,10 +2,10 @@
 
 use invoicing;
 
-drop table payments;
-drop table payment_methods;
-drop table clients;
-drop table invoices;
+-- drop table payments;
+-- drop table payment_methods;
+-- drop table clients;
+-- drop table invoices;
 
 create table payment_methods(
     id int not null auto_increment primary key,

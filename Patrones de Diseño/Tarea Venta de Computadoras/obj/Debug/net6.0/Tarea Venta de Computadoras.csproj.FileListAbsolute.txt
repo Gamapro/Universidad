@@ -1,0 +1,15 @@
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\obj\Debug\net6.0\Tarea Venta de Computadoras.csproj.AssemblyReference.cache
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\obj\Debug\net6.0\Tarea Venta de Computadoras.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\obj\Debug\net6.0\Tarea Venta de Computadoras.AssemblyInfoInputs.cache
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\obj\Debug\net6.0\Tarea Venta de Computadoras.AssemblyInfo.cs
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\obj\Debug\net6.0\Tarea Venta de Computadoras.csproj.CoreCompileInputs.cache
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\bin\Debug\net6.0\Tarea Venta de Computadoras.exe
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\bin\Debug\net6.0\Tarea Venta de Computadoras.deps.json
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\bin\Debug\net6.0\Tarea Venta de Computadoras.runtimeconfig.json
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\bin\Debug\net6.0\Tarea Venta de Computadoras.dll
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\bin\Debug\net6.0\Tarea Venta de Computadoras.pdb
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\obj\Debug\net6.0\Tarea Venta de Computadoras.dll
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\obj\Debug\net6.0\refint\Tarea Venta de Computadoras.dll
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\obj\Debug\net6.0\Tarea Venta de Computadoras.pdb
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\obj\Debug\net6.0\Tarea Venta de Computadoras.genruntimeconfig.cache
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Tarea Venta de Computadoras\obj\Debug\net6.0\ref\Tarea Venta de Computadoras.dll

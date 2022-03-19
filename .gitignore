@@ -11,6 +11,11 @@
 **/*.atsln
 **/*.asm~
 **/*.asmproj 
+**/*.asm~
+**/*.asmproj 
+**/*.pdsprj
+**/*.pdsbak 
+**/*.cproj
 
 **/Micros - Assembly/*/*/Debug/
 **/Micros - Assembly/*/*/*/Debug/

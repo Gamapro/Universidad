@@ -1,4 +1,4 @@
--- create database hr;
+create database hr;
 
 use hr;
 
