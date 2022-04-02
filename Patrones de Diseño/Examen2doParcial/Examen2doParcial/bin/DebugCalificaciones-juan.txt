@@ -1,0 +1,9 @@
+Historia: 7
+Matematicas: 9
+Geografia: 6
+Machine Learning: 9
+Patrones de Diseño: 9
+Japones: 9
+Redaccion: 8
+Bases de Datos: 9
+Promedio: 8.25
