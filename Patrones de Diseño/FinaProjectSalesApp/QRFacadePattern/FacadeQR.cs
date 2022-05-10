@@ -104,5 +104,24 @@ namespace FinaProjectSalesApp
             }
             return null;
         }
+        public List<int> getStoresTotalAmount()
+        {
+            List<int> sol = getEmptyList(3);
+            List<Store> list = getStoreList();
+            Console.WriteLine(sol.Count);
+            foreach (Store store in list)
+            {
+                sol[0] += store.soda;
+                sol[1] += store.bread;
+                sol[2] += store.vegetables;
+            }
+            return sol;
+        }
+        public List<int> getEmptyList(int x)
+        {
+            List<int> sol = new List<int>(x);
+            for (int i = 0; i < x; i++) sol.Add(0);
+            return sol;
+        }
     }
 }

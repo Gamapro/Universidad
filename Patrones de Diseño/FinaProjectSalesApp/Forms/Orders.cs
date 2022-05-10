@@ -11,11 +11,12 @@ namespace FinaProjectSalesApp
 {
     public partial class Orders : Form
     {
+        Mediator mediator = null;
         public Orders()
         {
             InitializeComponent();
             var t = this;
-            Mediator mediator = new Mediator(ref t);
+            mediator = new Mediator(ref t);
             mediator.updateStoreTable();
         }
         private void AddStore_Click(object sender, EventArgs e)
@@ -41,7 +42,32 @@ namespace FinaProjectSalesApp
             if(singleton.ordersForm == null)
             {
                 singleton.ordersForm = this;
+                singleton.mediator = mediator;
             }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void delivery_Click(object sender, EventArgs e)
+        {
+            setReference();
+            Singleton singleton = Singleton.Instance;
+            singleton = Singleton.GetInstance();
+            if (!singleton.mediator.checkTruckAvailability())
+            {
+                singleton.facade.messageBox("There are not enough trucks to satisfy the order.","Not enough trucks");
+                return;
+            }
+            if (singleton.mediator.checkNonZero())
+            {
+                singleton.facade.messageBox("All orders are empty.", "Empty orders.");
+                return;
+            }
+            var t = this;
+            Delivery form = new Delivery(ref t);
+            form.Show();
+            this.Hide();
         }
     }
 }

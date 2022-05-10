@@ -88,7 +88,7 @@ namespace FinaProjectSalesApp
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(117, 34);
             this.Exit.TabIndex = 5;
-            this.Exit.Text = "Exit";
+            this.Exit.Text = "Cancel";
             this.Exit.UseVisualStyleBackColor = true;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 

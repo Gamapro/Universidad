@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinaProjectSalesApp
-{
-    class Truck
+namespace FinaProjectSalesApp { 
+    public abstract class TruckFactory
     {
+        public abstract Truck FactoryCreate();
     }
 }

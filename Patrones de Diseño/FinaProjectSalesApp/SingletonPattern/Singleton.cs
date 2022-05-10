@@ -13,12 +13,26 @@ namespace FinaProjectSalesApp
 		public Mediator mediator = null;
 		private static object _handle = new object();
 		public Factory breadFactory, sodaFactory, vegetablesFactory;
+		public TruckFactory breadTruckFactory, sodaTruckFactory, vegetablesTruckFactory;
 		public int numberStores;
+		public List<Truck> trucks;
+		public FacadeQR facade;
 		protected Singleton()
 		{
+			facade = new FacadeQR();
+			trucks = new List<Truck>();
 			breadFactory = new BreadFactory();
 			sodaFactory = new SodaFactory();
 			vegetablesFactory = new VegetablesFactory();
+			breadTruckFactory = new BreadTruckFactory();
+			sodaTruckFactory = new SodasTruckFactory();
+			vegetablesTruckFactory = new VegetablesTruckFactory();
+			for(int i = 0; i < 3; i++)
+            {
+				trucks.Add(sodaTruckFactory.FactoryCreate());
+				trucks.Add(breadTruckFactory.FactoryCreate());
+				trucks.Add(vegetablesTruckFactory.FactoryCreate());
+			}
 			numberStores = 0;
 		}
 		public static Singleton Instance

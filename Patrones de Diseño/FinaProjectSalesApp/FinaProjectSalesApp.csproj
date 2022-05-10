@@ -56,7 +56,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComboItem.cs" />
+    <Compile Include="MediatorPattern\ComboItem.cs" />
+    <Compile Include="Forms\Delivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Delivery.Designer.cs">
+      <DependentUpon>Delivery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StoreOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,10 +93,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QRFacadePattern\ApiQR.cs" />
     <Compile Include="QRFacadePattern\FacadeQR.cs" />
-    <Compile Include="Singleton\Singleton.cs" />
+    <Compile Include="SingletonPattern\Singleton.cs" />
     <Compile Include="ProductsFactoryPattern\Products\Soda.cs" />
-    <Compile Include="Store.cs" />
-    <Compile Include="TruckFactoryPattern\Truck.cs" />
+    <Compile Include="ProductsFactoryPattern\Store.cs" />
+    <Compile Include="TruckFactoryPattern\Factories\BreadTruckFactory.cs" />
+    <Compile Include="TruckFactoryPattern\Factories\SodasTruckFactory.cs" />
+    <Compile Include="TruckFactoryPattern\Factories\VegetablesTruckFactorycs.cs" />
+    <Compile Include="TruckFactoryPattern\Trucks\BreadTruck.cs" />
+    <Compile Include="TruckFactoryPattern\Trucks\SodaTruck.cs" />
+    <Compile Include="TruckFactoryPattern\Trucks\Truck.cs" />
+    <Compile Include="TruckFactoryPattern\Factories\TruckFactory.cs" />
+    <Compile Include="TruckFactoryPattern\Trucks\VegetablesTruck.cs" />
+    <EmbeddedResource Include="Forms\Delivery.resx">
+      <DependentUpon>Delivery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StoreOrder.resx">
       <DependentUpon>StoreOrder.cs</DependentUpon>
     </EmbeddedResource>
