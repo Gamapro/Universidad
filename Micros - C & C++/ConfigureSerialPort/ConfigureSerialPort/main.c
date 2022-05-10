@@ -127,7 +127,7 @@ void LCD_init(void){
 	LCD_wr_instruction(LCD_Cmd_OnsCsB); //Enciende el display
 }
 
-void LCD_wr_char(uint8_t data){
+void LCD_wr_char(volatile uint8_t data){
 	//saco la parte m?s significativa del dato
 	PORTLCD=data>>4; //Saco el dato y le digo que escribir? un dato
 	saca_uno(&PORTLCD,RS);

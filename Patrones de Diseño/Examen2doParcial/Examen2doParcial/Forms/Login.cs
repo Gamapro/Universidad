@@ -25,18 +25,39 @@ namespace Examen2doParcial
                 SingletonUsers singleton = SingletonUsers.Instance;
                 singleton = SingletonUsers.GetInstance();
                 Alumno alumno = null;
-                if (singleton.validateUser(userText.Text, passText.Text, ref alumno))
+                Supervisor supervisor = null;
+                Profesor profesor = null;
+                var formLogin = this;
+                Director director = new Director();
+                if (singleton.validateAlumnoUser(userText.Text, passText.Text, ref alumno))
                 {
-                    var formLogin = this;
-                    InfoForm alumnoForm = new InfoForm(alumno, ref formLogin);
-                    alumnoForm.Show();
+                    Builder build = new AlumnoBuilder(alumno, ref formLogin);
+                    director.Construct(build);
+                    Form form = build.GetResult();
+                    form.Show();
+                    this.Hide();
+                    Debug.WriteLine("Login");
+                }
+                else if (singleton.validateProfesorUser(userText.Text, passText.Text, ref profesor))
+                {
+                    Builder build = new ProfesorBuilder(profesor, ref formLogin);
+                    director.Construct(build);
+                    Form form = build.GetResult();
+                    form.Show();
+                    this.Hide();
+                    Debug.WriteLine("Login");
+                }
+                else if (singleton.validateUser(userText.Text, passText.Text, ref supervisor))
+                {
+                    Builder build = new SupervisorBuilder(supervisor, ref formLogin);
+                    director.Construct(build);
+                    Form form = build.GetResult();
+                    form.Show();
                     this.Hide();
                     Debug.WriteLine("Login");
                 }
                 else 
                 {
-                    // sofia.bravo@hotmail.com
-                    // CHUiHB
                     Debug.WriteLine("Failed!");
                 }
             }

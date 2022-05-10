@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "UpZAsOCz6qXQjMgzAaVA8GjFs+b/Pcq4Ud+mPZ77tvqjv1BqhT0L1gegCCtEI/sZO+o3MQ72qW9DJhpUudHmSw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\david\\Documents\\GitHub\\Universidad\\Patrones de Diseño\\Iterator\\IteratorPattern.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\david\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.23\\microsoft.netcore.app.host.win-x64.3.1.23.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -11,4 +11,3 @@ C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Examen2doParcial
 C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Examen2doParcial\Examen2doParcial\bin\Debug\Newtonsoft.Json.dll
 C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Examen2doParcial\Examen2doParcial\bin\Debug\Newtonsoft.Json.xml
 C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Examen2doParcial\Examen2doParcial\obj\Debug\Examen2doParcial.csproj.CopyComplete
-C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Examen2doParcial\Examen2doParcial\obj\Debug\Examen2doParcial.InfoForm.resources

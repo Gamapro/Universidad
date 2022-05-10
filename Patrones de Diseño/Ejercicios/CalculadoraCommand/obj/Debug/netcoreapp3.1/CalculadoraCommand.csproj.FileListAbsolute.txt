@@ -1,0 +1,14 @@
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\obj\Debug\netcoreapp3.1\CalculadoraCommand.csproj.AssemblyReference.cache
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\obj\Debug\netcoreapp3.1\CalculadoraCommand.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\obj\Debug\netcoreapp3.1\CalculadoraCommand.AssemblyInfoInputs.cache
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\obj\Debug\netcoreapp3.1\CalculadoraCommand.AssemblyInfo.cs
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\obj\Debug\netcoreapp3.1\CalculadoraCommand.csproj.CoreCompileInputs.cache
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\bin\Debug\netcoreapp3.1\CalculadoraCommand.exe
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\bin\Debug\netcoreapp3.1\CalculadoraCommand.deps.json
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\bin\Debug\netcoreapp3.1\CalculadoraCommand.runtimeconfig.json
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\bin\Debug\netcoreapp3.1\CalculadoraCommand.runtimeconfig.dev.json
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\bin\Debug\netcoreapp3.1\CalculadoraCommand.dll
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\bin\Debug\netcoreapp3.1\CalculadoraCommand.pdb
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\obj\Debug\netcoreapp3.1\CalculadoraCommand.dll
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\obj\Debug\netcoreapp3.1\CalculadoraCommand.pdb
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\Ejercicios\CalculadoraCommand\obj\Debug\netcoreapp3.1\CalculadoraCommand.genruntimeconfig.cache

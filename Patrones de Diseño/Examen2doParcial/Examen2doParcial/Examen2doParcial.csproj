@@ -37,6 +37,7 @@
       <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,14 +53,16 @@
     <Compile Include="Builder\AlumnoBuilder.cs" />
     <Compile Include="Builder\Builder.cs" />
     <Compile Include="Builder\Director.cs" />
-    <Compile Include="Users\Alumno.cs" />
-    <Compile Include="Singleton\Data.cs" />
-    <Compile Include="Forms\InfoForm.cs">
+    <Compile Include="Forms\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InfoForm.Designer.cs">
-      <DependentUpon>InfoForm.cs</DependentUpon>
+    <Compile Include="Forms\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Builder\ProfesorBuilder.cs" />
+    <Compile Include="Builder\SupervisorBuilder.cs" />
+    <Compile Include="Users\Alumno.cs" />
+    <Compile Include="Singleton\Data.cs" />
     <Compile Include="Users\Profesor.cs" />
     <Compile Include="Users\Supervisor.cs" />
     <Compile Include="Forms\Login.cs">
@@ -71,9 +74,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton\SingletonUsers.cs" />
-    <EmbeddedResource Include="Forms\InfoForm.resx">
-      <DependentUpon>InfoForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
