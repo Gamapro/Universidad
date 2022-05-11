@@ -56,6 +56,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Binacle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Binacle.Designer.cs">
+      <DependentUpon>Binacle.cs</DependentUpon>
+    </Compile>
     <Compile Include="MediatorPattern\ComboItem.cs" />
     <Compile Include="Forms\Delivery.cs">
       <SubType>Form</SubType>
@@ -104,6 +110,9 @@
     <Compile Include="TruckFactoryPattern\Trucks\Truck.cs" />
     <Compile Include="TruckFactoryPattern\Factories\TruckFactory.cs" />
     <Compile Include="TruckFactoryPattern\Trucks\VegetablesTruck.cs" />
+    <EmbeddedResource Include="Forms\Binacle.resx">
+      <DependentUpon>Binacle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Delivery.resx">
       <DependentUpon>Delivery.cs</DependentUpon>
     </EmbeddedResource>

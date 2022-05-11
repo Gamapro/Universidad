@@ -37,6 +37,13 @@ namespace FinaProjectSalesApp
                 i++;
             } 
         }
+        public void updateBinnacle(string text)
+        {
+            Singleton singleton = Singleton.GetInstance();
+            singleton.binnacle.textboxAddText(text);
+            singleton.binnacle.textAddText(text);
+            singleton.binnacle.gridAddText(text);
+        }
         public bool checkTruckCapacity(List<int> numTrucks)
         {
             Singleton singleton = Singleton.GetInstance();

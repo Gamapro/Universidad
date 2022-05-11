@@ -41,18 +41,20 @@ namespace FinaProjectSalesApp
             this.ModifyStore = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.delivery = new System.Windows.Forms.Button();
+            this.binacle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
             // StoresLabel
             // 
             this.StoresLabel.AutoSize = true;
-            this.StoresLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StoresLabel.Location = new System.Drawing.Point(347, 9);
+            this.StoresLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StoresLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.StoresLabel.Location = new System.Drawing.Point(330, 9);
             this.StoresLabel.Name = "StoresLabel";
-            this.StoresLabel.Size = new System.Drawing.Size(103, 32);
+            this.StoresLabel.Size = new System.Drawing.Size(182, 39);
             this.StoresLabel.TabIndex = 2;
-            this.StoresLabel.Text = "Stores";
+            this.StoresLabel.Text = "Sales App";
             // 
             // Grid
             // 
@@ -63,12 +65,12 @@ namespace FinaProjectSalesApp
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.Grid.Location = new System.Drawing.Point(179, 72);
+            this.Grid.Location = new System.Drawing.Point(132, 65);
             this.Grid.Name = "Grid";
             this.Grid.ReadOnly = true;
             this.Grid.RowHeadersWidth = 51;
             this.Grid.RowTemplate.Height = 24;
-            this.Grid.Size = new System.Drawing.Size(426, 212);
+            this.Grid.Size = new System.Drawing.Size(426, 229);
             this.Grid.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn1
@@ -156,12 +158,23 @@ namespace FinaProjectSalesApp
             this.delivery.UseVisualStyleBackColor = true;
             this.delivery.Click += new System.EventHandler(this.delivery_Click);
             // 
+            // binacle
+            // 
+            this.binacle.Location = new System.Drawing.Point(609, 165);
+            this.binacle.Name = "binacle";
+            this.binacle.Size = new System.Drawing.Size(110, 49);
+            this.binacle.TabIndex = 8;
+            this.binacle.Text = "Binnacle";
+            this.binacle.UseVisualStyleBackColor = true;
+            this.binacle.Click += new System.EventHandler(this.binacle_Click);
+            // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.binacle);
             this.Controls.Add(this.delivery);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ModifyStore);
@@ -188,6 +201,7 @@ namespace FinaProjectSalesApp
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button delivery;
+        private System.Windows.Forms.Button binacle;
     }
 }
 

@@ -19,6 +19,9 @@ namespace FinaProjectSalesApp
             InitializeComponent();
             facade = new FacadeQR();
             this.form = form;
+            // Mediator updates binnacle
+            string str = "Starting delivery route.";
+            Singleton.GetInstance().mediator.updateBinnacle(str);
         }
         private void Exit_Click(object sender, EventArgs e)
         {
@@ -53,9 +56,15 @@ namespace FinaProjectSalesApp
                 facade.messageBox("Not enough trucks to satisfy the demand.", "Invalid number of trucks");
                 return;
             }
+
+            // Mediator updates binnacle
+            Singleton.GetInstance().mediator.updateBinnacle((s+b+v).ToString() + " trucks added to the route.");
+
             vals[0] = s; vals[1] = b; vals[2] = v;
             List<int> productsAmount = singleton.mediator.getProductsAmount(vals);
-            facade.messageBox("Starting delivery route.", "Delivery process");
+
+            string str = "Starting delivery route.";
+            facade.messageBox(str, "Delivery process");
             // Delivery process
             List<Store> stores = facade.getStoreList();
             foreach(Store store in stores)
@@ -63,7 +72,7 @@ namespace FinaProjectSalesApp
                 productsAmount[0] -= store.soda;
                 productsAmount[1] -= store.bread;
                 productsAmount[2] -= store.vegetables;
-                string str = String.Format("Store {3} received {4}\n" +
+                str = String.Format("Store {3} received {4}\n" +
                     "Products left: Soda {0}, Bread {1}, Vegetables {2}",
                     productsAmount[0], productsAmount[1], productsAmount[2],
                     store.name, store.getProductsString());
@@ -71,7 +80,11 @@ namespace FinaProjectSalesApp
             }
             string left = String.Format("Products left: Soda {0}, Bread {1}, Vegetables {2}",
                     productsAmount[0], productsAmount[1], productsAmount[2]);
-            facade.messageBox("Delivery completed.\n"+left, "Delivery process");
+
+            // Mediator updates binnacle
+            str = "Delivery completed.";
+            Singleton.GetInstance().mediator.updateBinnacle(str);
+            facade.messageBox(str+"\n"+left, "Delivery process");
             form.Show();
             this.Close();
         }
@@ -103,6 +116,8 @@ namespace FinaProjectSalesApp
                 ideal[0], ideal[1], ideal[2]
                 );
             facade.messageBox(rec, "Ideal route");
+            // Mediator updates binnacle
+            Singleton.GetInstance().mediator.updateBinnacle("Get ideal truck distribution.");
             return;
         }
     }

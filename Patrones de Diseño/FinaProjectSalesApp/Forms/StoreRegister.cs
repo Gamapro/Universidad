@@ -39,6 +39,9 @@ namespace FinaProjectSalesApp
                 facade.messageBox("That ID is already on use. Please choose a different one.", "Invalid ID");
                 return;
             }
+            // Mediator updates binnacle
+            string str = "Store "+ textName.Text + " added.";
+            Singleton.GetInstance().mediator.updateBinnacle(str);
             facade.AddNewStore(textName.Text, id );
             form.Show();
             this.Close();

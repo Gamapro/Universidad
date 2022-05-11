@@ -17,8 +17,10 @@ namespace FinaProjectSalesApp
 		public int numberStores;
 		public List<Truck> trucks;
 		public FacadeQR facade;
+		public Binacle binnacle;
 		protected Singleton()
 		{
+			binnacle = new Binacle();
 			facade = new FacadeQR();
 			trucks = new List<Truck>();
 			breadFactory = new BreadFactory();

@@ -63,6 +63,8 @@ namespace FinaProjectSalesApp
                     fs.Dispose();
                 }
             }
+            // Mediator updates binnacle
+            Singleton.GetInstance().mediator.updateBinnacle("New store image created");
             stream.Dispose();
             img.Dispose();
         }

@@ -35,19 +35,13 @@ namespace FinaProjectSalesApp
             form.Show();
             this.Hide();
         }
-        private void setReference()
-        {
-            Singleton singleton = Singleton.Instance;
-            singleton = Singleton.GetInstance();
-            if(singleton.ordersForm == null)
-            {
-                singleton.ordersForm = this;
-                singleton.mediator = mediator;
-            }
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+            if(Singleton.Instance != null)
+            {
+                Singleton.GetInstance().binnacle.Close();
+            }
         }
         private void delivery_Click(object sender, EventArgs e)
         {
@@ -68,6 +62,23 @@ namespace FinaProjectSalesApp
             Delivery form = new Delivery(ref t);
             form.Show();
             this.Hide();
+        }
+
+        private void binacle_Click(object sender, EventArgs e)
+        {
+            setReference();
+            Singleton singleton =  Singleton.GetInstance();
+            singleton.binnacle.Show();
+            this.Hide();
+        }
+        private void setReference()
+        {
+            Singleton singleton = Singleton.GetInstance();
+            if (singleton.ordersForm == null)
+            {
+                singleton.ordersForm = this;
+                singleton.mediator = mediator;
+            }
         }
     }
 }

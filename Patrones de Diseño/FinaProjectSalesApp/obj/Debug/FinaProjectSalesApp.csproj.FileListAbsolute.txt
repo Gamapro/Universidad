@@ -18,3 +18,4 @@ C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\FinaProjectSales
 C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\FinaProjectSalesApp\obj\Debug\FinaProjectSalesApp.StoreRegister.resources
 C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\FinaProjectSalesApp\obj\Debug\FinaProjectSalesApp.StoreOrder.resources
 C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\FinaProjectSalesApp\obj\Debug\FinaProjectSalesApp.Delivery.resources
+C:\Users\david\Documents\GitHub\Universidad\Patrones de Diseño\FinaProjectSalesApp\obj\Debug\FinaProjectSalesApp.Binacle.resources

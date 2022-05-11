@@ -14,9 +14,11 @@ namespace FinaProjectSalesApp
     {
         Orders form;
         FacadeQR facade;
+        private int previousId;
         public StoreOrder(ref Orders form)
         {
             InitializeComponent();
+            previousId = -1;
             facade = new FacadeQR();
             this.form = form;
             List<ComboItem> items = facade.getComboItemsList();
@@ -42,6 +44,9 @@ namespace FinaProjectSalesApp
             Int32.TryParse(breadTextBox.Text, out b);
             Int32.TryParse(vegetablesTextBox.Text, out v);
             facade.ModifyStore(s,b,v,id);
+            // Mediator updates binnacle
+            string str = facade.getStoreByIndex(id).name + " order finished.";
+            Singleton.GetInstance().mediator.updateBinnacle(str);
             form.Show();
             this.Close();
         }
@@ -57,11 +62,22 @@ namespace FinaProjectSalesApp
                 facade.messageBox("Only non-negative numbers are accepted.", "Invalid quantity on "+camp);
                 return false;
             }
+            // Mediator updates binnacle
+            string str = camp + ": " + val.ToString() + " added.";
+            Singleton.GetInstance().mediator.updateBinnacle(str);
             return true;
         }
         private void ComboBox1_SelectedIndexChanged(object sender, System.EventArgs e)
         {
+            string str = "";
+            if(previousId != -1)
+            {
+                // Mediator updates binnacle
+                str = facade.getStoreByIndex(previousId).name + " order closed.";
+                Singleton.GetInstance().mediator.updateBinnacle(str);
+            }
             int id = getCurrentStoreId();
+            previousId = id;
             if (id == -1)
             {
                 sodaLabel.Text = breadLabel.Text = vegetablesLabel.Text = infoLabel.Text = "";
@@ -70,6 +86,9 @@ namespace FinaProjectSalesApp
             }
             Store store = facade.getStoreByIndex(id);
             if (store == null) return;
+            // Mediator updates binnacle
+            str = facade.getStoreByIndex(id).name + " order opened.";
+            Singleton.GetInstance().mediator.updateBinnacle(str);
             enableElements();
             fillLabels();
             fillTextBox(store);
