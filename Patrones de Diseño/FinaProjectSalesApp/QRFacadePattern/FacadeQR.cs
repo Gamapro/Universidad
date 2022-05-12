@@ -65,7 +65,9 @@ namespace FinaProjectSalesApp
             foreach (String s in filePaths)
             {
                 string jsonString = api.decode(s);
-                if(jsonString != "") list.Add(api.deserializeStore(jsonString));
+                Store store = api.deserializeStore(jsonString);
+                store.setProfit();
+                if (jsonString != "") list.Add(store);
             }
             return list;
         }

@@ -8,8 +8,10 @@ namespace FinaProjectSalesApp
 {
     class Bread : Product
     {
+        static public new int price = 5;
         public Bread() : base()
         {
+            price = 5;
             this.id = 1;
             this.name = "Bread";
         }

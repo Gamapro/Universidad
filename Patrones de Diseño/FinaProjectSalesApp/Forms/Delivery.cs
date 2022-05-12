@@ -67,15 +67,31 @@ namespace FinaProjectSalesApp
             facade.messageBox(str, "Delivery process");
             // Delivery process
             List<Store> stores = facade.getStoreList();
-            foreach(Store store in stores)
+
+            // sort store by profit
+            for (int i = 0; i < stores.Count; i++)
+            {
+                for (int j = i; j > 0; j--)
+                {   
+                    if (stores[j].profit > stores[j-1].profit)
+                    {
+                        Store aux = stores[j];
+                        stores[j] = stores[j-1];
+                        stores[j-1] = aux;
+                    }
+                }
+            }
+
+            foreach (Store store in stores)
             {
                 productsAmount[0] -= store.soda;
                 productsAmount[1] -= store.bread;
                 productsAmount[2] -= store.vegetables;
                 str = String.Format("Store {3} received {4}\n" +
-                    "Products left: Soda {0}, Bread {1}, Vegetables {2}",
+                    "Products left: Soda {0}, Bread {1}, Vegetables {2}\n" + 
+                    "Profit: {5}",
                     productsAmount[0], productsAmount[1], productsAmount[2],
-                    store.name, store.getProductsString());
+                    store.name, store.getProductsString(), store.profit);
                 facade.messageBox(str, "Delivery process");
             }
             string left = String.Format("Products left: Soda {0}, Bread {1}, Vegetables {2}",

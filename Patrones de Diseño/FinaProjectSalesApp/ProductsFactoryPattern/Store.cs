@@ -11,7 +11,7 @@ namespace FinaProjectSalesApp
         public int id;
         public string name;
         public List<Product> products;
-        public int soda, bread, vegetables;
+        public int soda, bread, vegetables, profit;
         public Store(int id, string name)
         {
             this.id = id;
@@ -38,6 +38,10 @@ namespace FinaProjectSalesApp
             }
             soda = s; bread = b; vegetables = v;
             return;
+        }
+        public void setProfit()
+        {
+            this.profit = soda * Soda.price + bread * Bread.price + vegetables * Vegetables.price;
         }
     }
 }

@@ -8,6 +8,7 @@ namespace FinaProjectSalesApp
 {
     class Soda : Product
     {
+        static public new int price = 10;
         public Soda() : base()
         {
             this.id = 0;

@@ -10,11 +10,10 @@ namespace FinaProjectSalesApp
     {
         public int id;
         protected string name;
-        protected int price;
-        protected int amount;
+        static public int price = 1;
+        public int amount;
         public Product()
         {
-            this.price = 1;
             this.amount = 1;
         }
     }

@@ -10,6 +10,7 @@ namespace FinaProjectSalesApp
     {
         private Orders form;
         private FacadeQR facade;
+        private Singleton singleton;
         public Mediator()
         {
             facade = new FacadeQR();
