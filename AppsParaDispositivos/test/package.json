@@ -45,7 +45,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "androidAdd": "npx cap init && npx cap add android",
+    "androidBuild": "npx cap sync android && npx cap open android"
   },
   "eslintConfig": {
     "extends": [
