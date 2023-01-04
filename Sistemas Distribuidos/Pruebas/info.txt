@@ -1,0 +1,3 @@
+Computer Name : Gama
+Computer IP Address : 10.201.108.246
+Computer MAC Address : 3c:55:76:10:d4:25
