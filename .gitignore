@@ -16,6 +16,11 @@
 **/*.pdsprj
 **/*.pdsbak 
 **/*.cproj
+**/*.tgz
+
+**/NLP/DatasetDownloadTarea/estenograficas_limpias_por_fecha/
+**/NLP/checkpoints/
+**/NLP/word2vec_col.txt
 
 **/Micros - Assembly/*/*/Debug/
 **/Micros - Assembly/*/*/*/Debug/
