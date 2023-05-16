@@ -231,24 +231,17 @@ def mean_average_precision(
 
     return sum(average_precisions) / len(average_precisions)
 
+import io
 
 def plot_image(image, boxes):
-    """Plots predicted bounding boxes on the image"""
     cmap = plt.get_cmap("tab20b")
     class_labels = config.COCO_LABELS if config.DATASET=='COCO' else config.PASCAL_CLASSES
     colors = [cmap(i) for i in np.linspace(0, 1, len(class_labels))]
     im = np.array(image)
     height, width, _ = im.shape
-
-    # Create figure and axes
     fig, ax = plt.subplots(1)
-    # Display the image
     ax.imshow(im)
-
-    # box[0] is x midpoint, box[2] is width
-    # box[1] is y midpoint, box[3] is height
-
-    # Create a Rectangle patch
+    ax.axis("off")
     for box in boxes:
         assert len(box) == 6, "box should contain class pred, confidence, x, y, width, height"
         class_pred = box[0]
@@ -263,7 +256,6 @@ def plot_image(image, boxes):
             edgecolor=colors[int(class_pred)],
             facecolor="none",
         )
-        # Add the patch to the Axes
         ax.add_patch(rect)
         plt.text(
             upper_left_x * width,
@@ -273,9 +265,13 @@ def plot_image(image, boxes):
             verticalalignment="top",
             bbox={"color": colors[int(class_pred)], "pad": 0},
         )
-
-    plt.show()
-
+    with io.BytesIO() as io_buf:
+        fig.savefig(io_buf, format='raw')
+        image = np.frombuffer(io_buf.getvalue(), np.uint8).reshape(
+            int(fig.bbox.bounds[3]), int(fig.bbox.bounds[2]), -1)
+    plt.close()
+    return image
+    
 
 def get_evaluation_bboxes(
     loader,
@@ -333,6 +329,57 @@ def get_evaluation_bboxes(
     model.train()
     return all_pred_boxes, all_true_boxes
 
+def get_evaluation_bboxes_image(
+    image,
+    model,
+    iou_threshold,
+    anchors,
+    threshold,
+    box_format="midpoint",
+    device="cuda",
+):
+    # make sure model is in eval before get bboxes
+    model.eval()
+    train_idx = 0
+    all_pred_boxes = []
+    all_true_boxes = []    
+    x = image
+    with torch.no_grad():
+        predictions = model(x)
+
+    batch_size = x.shape[0]
+    bboxes = [[] for _ in range(batch_size)]
+    for i in range(3):
+        S = predictions[i].shape[2]
+        anchor = torch.tensor([*anchors[i]]).to(device) * S
+        boxes_scale_i = cells_to_bboxes(
+            predictions[i], anchor, S=S, is_preds=True
+        )
+        for idx, (box) in enumerate(boxes_scale_i):
+            bboxes[idx] += box
+
+    # we just want one bbox for each label, not one for each scale
+    true_bboxes = None
+
+    for idx in range(batch_size):
+        nms_boxes = non_max_suppression(
+            bboxes[idx],
+            iou_threshold=iou_threshold,
+            threshold=threshold,
+            box_format=box_format,
+        )
+
+        for nms_box in nms_boxes:
+            all_pred_boxes.append([train_idx] + nms_box)
+
+        # for box in true_bboxes[idx]:
+        #     if box[1] > threshold:
+        #         all_true_boxes.append([train_idx] + box)
+
+        train_idx += 1
+
+    model.train()
+    return all_pred_boxes
 
 def cells_to_bboxes(predictions, anchors, S, is_preds=True):
     """
