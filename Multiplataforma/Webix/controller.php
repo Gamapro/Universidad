@@ -18,5 +18,10 @@
             $sentencia->bind_param("i", $id);
             $sentencia->execute();        
         }
+    }else if( $accion == "Modificar"){
+        $mysqli = new mysqli("localhost", "alumnos", "app.2023", "gama");
+        $sentencia = $mysqli->prepare("update Peliculas set nivel = ?, titulo = ?, anio = ?, votos = ? where id = ?");        
+        $sentencia->bind_param("isiii", $_POST['nivel'], $_POST['titulo'], $_POST['anio'], $_POST['votos'], $_POST['id']);
+        $sentencia->execute();
     }
 ?>

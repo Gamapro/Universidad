@@ -10,6 +10,9 @@
         <h1 align='center'>Welcome to Webix!</h1><br/>
         <div id="app"></div>
         <script type="text/javascript" charset="utf-8">
+
+            const urlBuscar = 'http://dapp.enlacenet.net:8069/buscar';
+
             webix.ui(
                 {
                     cols:[
@@ -20,25 +23,28 @@
                                 {view:'text',id:'titulo',name:'titulo',label:'Titulo',labelWidth:120, required:true},
                                 {view:'combo',id:'anio',name:'anio',label:'Año',options:["1972","1994"]},
                                 {view:'text',id:'votos',name:'votos',label:'Votos'},
-                                {view:'button',id:'BotonEntrar',value:'Entrar',click:Clicked},
-                                {view:'button',id:'BotonNuevo',value:'Nuevo',click:Clicked},
-                                {view:'button',id:'BotonModificar',value:'Modificar',click:Clicked, hidden:true},
+                                {cols:[
+                                    {view:'button',id:'BotonNuevo',value:'Nuevo',click:nuevo},
+                                    {},
+                                    {view:'button',id:'BotonGuardar',value:'Guardar',click:guardar},
+                                    {view:'button',id:'BotonModificar',value:'Modificar',click:modificar,hidden:true}
+                                ]},
+                                {view:'button',id:'BotonBorrar',value:'Borrar',click:borrar},
                             ]
                         },
                         {
                             rows:[
                                 {
-    	                            view:'button',id:'BotonBorrar',value:'Borrar',click:borrar
-                                },{
                                     view:"datatable", id:'tabla', select:"row",  multiselect:true,
                                     columns:[
                                         { id:"nivel", header:"", width:50,sort:'int'},
-                                        { id:"titulo", header:["Pelicula",{content:"textFilter"}], width:200, 
+                                        { id:"titulo", header:["Pelicula",{content:"textFilter"}], width:200,
                                             fillspace:true,sort:'string'},
                                         { id:"anio", header:"Produccion", width:80,sort:'int'},
                                         { id:"votos", header:"Votos", width:100,sort:'int'},
                                     ],
-                                    url: 'results.php',
+                                    url: urlBuscar
+                                    // url: 'results.php',
                                 }
                             ]
                         }
@@ -53,11 +59,13 @@
                 webix.confirm('Estas seguro de eliminar las filas: ' + idFilas).then(function(resultado){
                     if(resultado) {
                         webix.ajax().post(
-                            'controller.php',
+                            'http://dapp.enlacenet.net:8069/borrar',
+                            // 'controller.php',
                             {'Accion':'Borrar','Id':idFilas},
                             function() {
                                 $$('tabla').clearAll();
-                                $$('tabla').load('results.php');
+                                $$('tabla').load(urlBuscar);
+                                // $$('tabla').load('results.php');
                             }
                         );
                     } else {
@@ -66,13 +74,61 @@
                 });
             }
 
-            function Clicked(){
+            $$('tabla').attachEvent("onAfterSelect", function(selection, preserve){
+                $$('BotonModificar').show();
+                $$('BotonGuardar').hide();
+            });
+            
+            function mostrar() {
                 $$('Accion').setValue('Guardar');
-                if($$('forma').validate()){   
-                    webix.ajax().post('controller.php', $$('forma').getValues(), 
+                if($$('forma').validate()) {
+                    webix.ajax().post(
+                        'http://dapp.enlacenet.net:8069/mostrar',
+                        // 'controller.php',
+                        $$('forma').getValues(), 
+                        function() {
+                            $$('tabla').clearAll();
+                            $$('tabla').load(urlBuscar);
+                            // $$('tabla').load('results.php');
+                            $$('forma').clear();
+                    });
+                }	
+            }
+
+            function nuevo(){
+                $$('forma').clear();
+                $$('BotonModificar').hide();
+                $$('BotonGuardar').show();
+            }
+
+            function modificar(){
+                $$('Accion').setValue('Modificar');
+                if($$('forma').validate()){
+                    webix.ajax().post(
+                        'http://dapp.enlacenet.net:8069/modificar',
+                        // 'controller.php', 
+                        $$('forma').getValues(), 
                         function () {
                             $$('tabla').clearAll();
-                            $$('tabla').load('results.php');
+                            $$('tabla').load(urlBuscar);
+                            // $$('tabla').load('results.php');
+                            $$('forma').clear();
+                        }
+                    );
+                }
+            }
+
+            function guardar(){
+                $$('Accion').setValue('Guardar');
+                if($$('forma').validate()){   
+                    webix.ajax().post(
+                        'http://dapp.enlacenet.net:8069/guardar',
+                        // 'controller.php', 
+                        $$('forma').getValues(), 
+                        function () {
+                            $$('tabla').clearAll();
+                            $$('tabla').load(urlBuscar);
+                            // $$('tabla').load('results.php');
                             $$('forma').clear();
                         }
                     );
